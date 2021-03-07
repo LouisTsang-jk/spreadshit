@@ -14,13 +14,20 @@ module.exports = {
     shared: 'lodash'
   },
   optimization: {
+    moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all'
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
     }
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',

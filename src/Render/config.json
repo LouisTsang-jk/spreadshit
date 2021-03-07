@@ -1,0 +1,10 @@
+{
+  "width": 64,
+  "height": 16,
+  "color": "#333",
+  "background-color": "#FFF",
+  "border": {
+    "color": "#ccc",
+    "weight": "1px"
+  }
+}

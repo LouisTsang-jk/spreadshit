@@ -1,7 +1,9 @@
-import _ from 'lodash';
+import { debounce } from 'lodash';
 import './style.css'
-console.log('index.js init');
+import printMe from './print'
 
+console.log('index.js init', debounce);
+printMe();
 function component () {
   const element = document.createElement('div');
   element.innerHTML = _.join(['Hello', 'webpack', '']);

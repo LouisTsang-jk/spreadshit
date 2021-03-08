@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
@@ -31,8 +32,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Orion',
+      template: 'src/assets/index.html'
+    })
   ],
   module: {
     rules: [

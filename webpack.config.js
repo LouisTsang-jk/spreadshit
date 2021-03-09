@@ -50,5 +50,10 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, 'src/assets')
+    }
   }
 }

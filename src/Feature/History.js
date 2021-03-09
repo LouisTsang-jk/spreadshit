@@ -1,6 +1,7 @@
 
 /**
- * 存储
+ * record action
+ * provide undo & redo
  */
 export default class History {
   constructor (maxSize = 0) {

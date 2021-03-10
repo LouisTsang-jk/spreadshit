@@ -15,15 +15,15 @@ export default class Excel {
     this.monitor = null;
     this.history = [];
     this.plugins = []; // RTF,Border,Merge Cell,Image,Chart,Fn...
-    this.tools = {
-      top: null,
-      bottom: null
-    };
-    this.header = {
-      row: null,
-      column: null
-    };
-    this.contextMenu = null
+    // shadow dom
+    this.element = {
+      header: null,
+      tools: null,
+      contextmenu: null,
+      scroll: null,
+      selection: null,
+      editor: null
+    }
   }
   render () {
     const { $ctx } = this;

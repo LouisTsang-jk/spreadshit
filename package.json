@@ -1,5 +1,5 @@
 {
-  "name": "Orion",
+  "name": "E2Excel",
   "version": "0.0.1",
   "description": "spreadsheet",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LouisTsang-jk/spreadshit.git"
+    "url": "git+https://github.com/LouisTsang-jk/E2Excel.git"
   },
   "author": "LouisTsang-JK",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LouisTsang-jk/spreadshit/issues"
+    "url": "https://github.com/LouisTsang-jk/E2Excel/issues"
   },
-  "homepage": "https://github.com/LouisTsang-jk/spreadshit#readme",
+  "homepage": "https://github.com/LouisTsang-jk/E2Excel#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.3",

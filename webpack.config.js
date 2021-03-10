@@ -39,7 +39,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Orion',
+      title: 'E2Excel',
       template: 'src/assets/index.html'
     })
   ],

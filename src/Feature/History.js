@@ -9,7 +9,7 @@ export default class History {
     this.undoStack = []; // 撤销
     this.redoStack = []; // 重做
   }
-  // 所有行为都视为单元格操作
+  // 所有行为都视为单元格操作 & 选中项应该也要还原
   createCommand () {
     const action = new Action();
     this.command.push(action)

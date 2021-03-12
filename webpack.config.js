@@ -6,13 +6,13 @@ module.exports = {
   entry: {
     index: {
       import: './src/index.js',
-      dependOn: 'shared'
+      dependOn: 'lodash'
     },
     print: {
       import: './src/print.js',
-      dependOn: 'shared'
+      dependOn: 'lodash'
     },
-    shared: 'lodash'
+    lodash: 'lodash'
   },
   optimization: {
     moduleIds: 'deterministic',
@@ -48,6 +48,13 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: false
+        }
       }
     ]
   },

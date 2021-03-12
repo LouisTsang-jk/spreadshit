@@ -37,8 +37,6 @@ export default class Excel {
       width: w,
       height: h
     } = this.options;
-    console.log('h', h);
-    console.log('w', w);
     if (h && w) {
       this.$el.height = h;
       this.$el.width = w;
@@ -47,14 +45,13 @@ export default class Excel {
     const cellWidth = 80;
     const cellHeight = 24;
     $ctx.lineWidth = 1;
-    $ctx.strokeStyle = 'red';
+    $ctx.strokeStyle = '#eee';
     for (let i = 0; i < 100; i++) {
-      for (let j = 0; j < 20; j++) {
+      for (let j = 0; j < 50; j++) {
         $ctx.strokeRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
       }
     }
-    // $ctx.rect(10, 10, 100, 100);
-    // $ctx.fill();
+    // 渲染Header
   }
   // 重新绘制
   resize (width, height, noRender) {

@@ -1,5 +1,5 @@
-class Header extends HTMLElement {
+customElements.define('Header', class Header extends HTMLElement {
   constructor () {
     super();
   }
-}
+})

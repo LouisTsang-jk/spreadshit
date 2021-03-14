@@ -4,11 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="import" href="./web-components.html"> -->
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <% for (var key in components) { %>
-  <link rel="import" href="/components/<%=components[key] %>.html"></script>
-  <% } %>
 </head>
 
 <body>

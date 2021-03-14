@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="import" href="./web-components.html"> -->
-  <title>Exk</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <% for (var key in components) { %>
+  <link rel="import" href="/components/<%=components[key] %>.html"></script>
+  <% } %>
 </head>
+
 <body>
   <div>
     <div id="sheet">
@@ -13,7 +18,8 @@
   </div>
 </body>
 <style>
-  html, body {
+  html,
+  body {
     height: 100%;
     margin: 0;
   }

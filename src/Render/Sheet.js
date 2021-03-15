@@ -29,9 +29,13 @@ export default class Sheet {
         const column = row[columnKey];
         // TODO load plugins
         // TODO create hook
-        this.draw()
+        const draw = new Draw(ctx, {x, y, width, height})
+        draw.cell(column);
+        // TODO this.draw.text(value)
         // TODO create hook
       })
     })
+    // 执行完一次macro task
+    // 执行micro task(border)
   }
 }

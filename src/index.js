@@ -23,8 +23,3 @@ const excel = new Excel({
 excel.render();
 // excel.refresh(); // cal style
 console.log('excel:', excel);
-
-const link = document.createElement('link');
-// link.rel = 'import';
-// link.href = './Element/Header.html';
-document.head.appendChild(link);

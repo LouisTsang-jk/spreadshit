@@ -1,4 +1,6 @@
 import Draw from '../Feature/Draw.js';
+import EventEmitter from 'wolfy87-eventemitter'
+
 export default class Sheet {
   constructor (ctx, options) {
     const { data } = options;
@@ -29,8 +31,8 @@ export default class Sheet {
         const column = row[columnKey];
         // TODO load plugins
         // TODO create hook
-        const draw = new Draw(ctx, {x, y, width, height})
-        draw.cell(column);
+        // const draw = new Draw(this.ctx, {x, y, width, height})
+        // draw.cell(column);
         // TODO this.draw.text(value)
         // TODO create hook
       })

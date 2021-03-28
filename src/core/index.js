@@ -1,10 +1,10 @@
-import Sheet from "../Render/Sheet";
-import EventEmitter from 'wolfy87-eventemitter'
+import Sheet from "../Render/Sheet.js";
+import GlobalEvent from 'Lib/globalEvent.js'
 
 /**
  * Excel 实例
  */
-export default class Excel extends EventEmitter {
+export default class Excel extends GlobalEvent {
   constructor(options) {
     super();
     const btn = document.createElement('button');

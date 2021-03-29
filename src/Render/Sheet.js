@@ -1,5 +1,4 @@
 import Draw from '../Feature/Draw.js';
-import EventEmitter from 'wolfy87-eventemitter'
 
 export default class Sheet {
   constructor (ctx, options) {

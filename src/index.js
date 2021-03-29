@@ -1,6 +1,6 @@
-import Excel from './core/index.js';
+import Excel from './core/proxy.js';
 import './index.css';
-// Excel -> Frame -> Sheet -> Worker/Grid/Cell/
+// Excel -> Sheet -> Worker/Grid/Cell/
 const excel = new Excel({ 
   id: 'sheet',
   data: [

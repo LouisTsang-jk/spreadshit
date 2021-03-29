@@ -1,8 +1,9 @@
 {
   "id": "excel",
-  "Feature": {
-    "History": {
-      "maxSize": "10"
-    }
+  "grid": {
+    "borderWeight": "0.5"
+  },
+  "history": {
+    "maxSize": "10"
   }
 }

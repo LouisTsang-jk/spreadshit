@@ -1,6 +1,5 @@
 export default function compose (middleware) {
   return function (context, next) {
-    let next = -1;
     return dispatch(0);
     function dispatch (i) {
       index = i;

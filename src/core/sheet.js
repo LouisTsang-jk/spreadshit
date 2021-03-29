@@ -1,3 +1,5 @@
 export default class Sheet {
-  constructor () {}
+  constructor (options) {
+    this.options = options
+  }
 }

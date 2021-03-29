@@ -58,7 +58,8 @@ module.exports = {
     alias: {
       Assets: path.resolve(__dirname, 'src/assets'),
       Lib: path.resolve(__dirname, 'src/lib'),
-      Core: path.resolve(__dirname, 'src/core')
+      Core: path.resolve(__dirname, 'src/core'),
+      Plugins: path.resolve(__dirname, 'src/plugins')
     }
   }
 }

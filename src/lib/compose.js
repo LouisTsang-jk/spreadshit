@@ -2,7 +2,6 @@ export default function compose (middleware) {
   return function (context, next) {
     return dispatch(0);
     function dispatch (i) {
-      index = i;
       let fn = middleware[i];
       if (i === middleware.length) fn = next;
       if (!fn) return Promise.resolve();

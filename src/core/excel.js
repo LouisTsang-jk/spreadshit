@@ -13,13 +13,22 @@ export default class Excel {
   render () {
     const sheet = this.sheets[this.currentSheet]
     const data = sheet.options.data
-    console.log('sheet', data)
+    // 渲染Grid
     data && Object.keys(data).forEach(rowKey => {
       const row = data[rowKey];
       Object.keys(row).forEach(columnKey => {
         const column = row[columnKey];
         console.log('column>>>', column)
-        const cell = new Cell()
+        const cell = new Cell(this.ctx, column, {
+          x: 0,
+          y: 0,
+          xi: rowKey,
+          yi: columnKey,
+          width: 80,
+          height: 20
+        })
+        cell.render()
+        console.log('cell', cell)
         // TODO load plugins
         // TODO create hook
         // const draw = new Draw(this.ctx, {x, y, width, height})

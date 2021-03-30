@@ -1,7 +1,12 @@
 {
   "id": "excel",
   "grid": {
-    "borderWeight": "0.5"
+    "weight": "0.5",
+    "color": "#dedede"
+  },
+  "cell": {
+    "height": 20,
+    "width": 80
   },
   "history": {
     "maxSize": "10"

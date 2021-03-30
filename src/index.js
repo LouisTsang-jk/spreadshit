@@ -11,6 +11,11 @@ const excel = new Excel({
           0: {
             value: '这是第一个渲染出来的文字单元格'
           }
+        },
+        99: {
+          10: {
+            value: '最后一个单元格'
+          }
         }
       },
       
@@ -21,5 +26,6 @@ const excel = new Excel({
 });
 // 渲染 10 x 10单元格
 excel.render();
+window.onresize = excel.resize.bind(excel)
 // excel.refresh(); // cal style
 console.log('excel:', excel);

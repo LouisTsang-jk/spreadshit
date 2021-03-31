@@ -1,6 +1,7 @@
 import Sheet from 'Core/sheet.js'
 import Cell from 'Core/cell.js'
 import config from 'Core/config.json'
+import { down, move, up } from 'Lib/mouse.js'
 
 export default class Excel {
   constructor (data) {
@@ -10,12 +11,12 @@ export default class Excel {
     // 计算高宽
     // need 总单元格个数
     // 高 = 默认单元格高度 * 默认单元格个数 + 特殊单元格高度 * 特殊单元格高度
-    this.el.height = 2000
-    this.el.width = 2000
-    this.el.style = 'height: 1500px;width: 1500px'
+    this.el.height = 1500
+    this.el.width = 1500
+    this.el.style = 'height: 1000px;width: 1000px'
     this.ctx.scale(2, 2)
     document.body.appendChild(this.el)
-    this.el.addEventListener('click', this.click)
+    this.initTouchEvent()
     this.currentSheet = 0
     this.sheets = data.map(option => new Sheet(option))
     this.grid = {
@@ -24,8 +25,15 @@ export default class Excel {
     }
     // this.header = new Header();
   }
-  click (e) {
-    console.log(e)
+  initTouchEvent () {
+    const { el } = this
+    el.addEventListener('mousedown', down)
+    el.addEventListener('mousemove', () => {
+      console.log('touch move')
+    })
+    el.addEventListener('mouseup', () => {
+      console.log('touch end')
+    })
   }
   resize (w, h) {
     if (w && h) {

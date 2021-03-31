@@ -6,7 +6,9 @@
   },
   "cell": {
     "height": 20,
-    "width": 80
+    "width": 80,
+    "fontSize": 10,
+    "fontFamily": "sans-serif"
   },
   "history": {
     "maxSize": "10"

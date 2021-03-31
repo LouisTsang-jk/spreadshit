@@ -36,5 +36,14 @@ const excel = new Excel({
 });
 // 渲染 10 x 10单元格
 excel.render();
+excel.on('build', (e) => {
+  console.log('build on src', e)
+})
+const btn = document.createElement('button')
+btn.innerHTML = 'CLICK'
+document.body.appendChild(btn)
+btn.addEventListener('click', () => {
+  excel.emit('build')
+})
 window.onresize = excel.resize.bind(excel)
 // excel.refresh(); // cal style

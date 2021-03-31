@@ -4,6 +4,7 @@ import config from 'Core/config.json'
 
 export default class Excel {
   constructor (data) {
+    console.time()
     this.el = document.createElement('canvas')
     this.ctx = this.el.getContext('2d')
     // 计算高宽
@@ -11,14 +12,20 @@ export default class Excel {
     // 高 = 默认单元格高度 * 默认单元格个数 + 特殊单元格高度 * 特殊单元格高度
     this.el.height = 2000
     this.el.width = 2000
+    this.el.style = 'height: 1500px;width: 1500px'
+    this.ctx.scale(2, 2)
     document.body.appendChild(this.el)
+    this.el.addEventListener('click', this.click)
     this.currentSheet = 0
     this.sheets = data.map(option => new Sheet(option))
-    this.line = {
-      vertical: {},
-      horizontal: {}
+    this.grid = {
+      vertical: [],
+      horizontal: []
     }
     // this.header = new Header();
+  }
+  click (e) {
+    console.log(e)
   }
   resize (w, h) {
     if (w && h) {
@@ -48,9 +55,10 @@ export default class Excel {
         cell.render()
       })
     })
-    console.log('sheet>>>', sheet)
+    console.timeEnd()
   }
   renderGrid () {
+    // TODO
     const { width, height } = this.el
     // const horizontalNum = 
     // const verticalNum = 
@@ -59,20 +67,23 @@ export default class Excel {
     // vertical
     const { grid: { color } } = config
     for (let i = 0; i < 200; i++) {
-      this.ctx.fillStyle
-      this.ctx.moveTo(i * 80, 0)
-      this.ctx.lineTo(i * 80, height)
+      const axis = i * 80
+      this.grid.vertical.push(axis)
+      this.ctx.moveTo(axis, 0)
+      this.ctx.lineTo(axis, height)
       this.ctx.strokeStyle = color
       this.ctx.stroke()
     }
     // horizontal
     for (let j = 0; j < 200;j++) {
-      this.ctx.fillStyle
-      this.ctx.moveTo(0, 20 * j)
-      this.ctx.lineTo(width, 20 * j)
+      const axis = j * 20
+      this.grid.horizontal.push(axis)
+      this.ctx.moveTo(0, axis)
+      this.ctx.lineTo(width, axis)
       this.ctx.strokeStyle = color
       this.ctx.stroke()
     }
+    console.log('this.grid', this.grid)
   }
   sheetChange () {
   }

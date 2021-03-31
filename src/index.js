@@ -12,6 +12,16 @@ const excel = new Excel({
             value: '这是第一个渲染出来的文字单元格'
           }
         },
+        2: {
+          7: {
+            value: '20'
+          }
+        },
+        4: {
+          4: {
+            value: 'Sample Cell'
+          }
+        },
         99: {
           10: {
             value: '最后一个单元格'
@@ -28,4 +38,3 @@ const excel = new Excel({
 excel.render();
 window.onresize = excel.resize.bind(excel)
 // excel.refresh(); // cal style
-console.log('excel:', excel);

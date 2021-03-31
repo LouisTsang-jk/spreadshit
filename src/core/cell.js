@@ -19,7 +19,6 @@ export default class Cell {
   }
   render () {
     const fn = compose(this.plugins)
-    console.log('fn>>>', fn)
     // TODO 找到渲染命令的位置
     fn(this)
   }

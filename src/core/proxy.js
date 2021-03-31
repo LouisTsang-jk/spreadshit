@@ -12,7 +12,6 @@ export default class ProxyController {
     this.excel.render()
   }
   resize (e) {
-    console.log('e', e)
     this.excel.resize()
   }
 }

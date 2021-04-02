@@ -27,7 +27,9 @@ export default class Excel {
   }
   initTouchEvent () {
     const { el } = this
-    el.addEventListener('mousedown', down)
+    el.addEventListener('mousedown', down(() => {
+      console.log('cb')
+    }))
     el.addEventListener('mousemove', () => {
       console.log('touch move')
     })

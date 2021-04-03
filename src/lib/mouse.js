@@ -2,12 +2,12 @@
 // 判断是否有双击
 function down (cb) {
   let timer = null
-  return function () {
+  return function (e) {
     const DOUBLE_GAP = 300
     if (timer) {
-      console.log('300ms间隔内点击了两次以上')
-      cb()
+      cb('doubleClick', e)
     } else {
+      cb('singleClick', e)
       timer = window.setTimeout(() => {
         timer = null
       }, DOUBLE_GAP)

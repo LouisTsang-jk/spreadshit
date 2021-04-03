@@ -2,6 +2,7 @@ import Sheet from 'Core/sheet.js'
 import Cell from 'Core/cell.js'
 import config from 'Core/config.json'
 import { down, move, up } from 'Lib/mouse.js'
+import 'Lib/hack.js'
 
 export default class Excel {
   constructor (data) {
@@ -27,8 +28,13 @@ export default class Excel {
   }
   initTouchEvent () {
     const { el } = this
-    el.addEventListener('mousedown', down(() => {
-      console.log('cb')
+    el.addEventListener('mousedown', down((type, evt) => {
+      if (type === 'singleClick') {
+        console.log('单击/选中')
+      }
+      if (type === 'doubleClick') {
+        console.log('300ms间隔内点击了两次以上')
+      }
     }))
     el.addEventListener('mousemove', () => {
       console.log('touch move')

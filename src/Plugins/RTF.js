@@ -6,7 +6,6 @@ export default class RTF {
       const { ctx, val, x, y, width, height } = context
       const { fontSize, fontFamily } = config.cell
       const textObj = ctx.measureText(val)
-      console.log('text obj>>>', ctx.font)
       ctx.fillStyle = '#000'
       ctx.textAlign = 'left'
       ctx.font = `${fontSize}px ${fontFamily}`
